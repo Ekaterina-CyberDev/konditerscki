@@ -1,0 +1,430 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fffae6 0%, #fff0cc 50%, #ffe699 100%);
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Яркие желтые элементы фона */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.5;
+    animation: float 4s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 250px;
+    height: 250px;
+    background: #ffd700;
+    top: -40px;
+    left: -40px;
+    animation-duration: 3s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: #ffcc00;
+    bottom: -30px;
+    right: -30px;
+    animation-duration: 4s;
+}
+
+.shape-3 {
+    width: 180px;
+    height: 180px;
+    background: #ffdb4d;
+    top: 50%;
+    left: 70%;
+    animation-duration: 5s;
+}
+
+.shape-4 {
+    width: 220px;
+    height: 220px;
+    background: #ffed4d;
+    bottom: 20%;
+    left: 20%;
+    animation-duration: 3.5s;
+}
+
+/* Кондитерские акценты */
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0.6;
+    animation: float-small 3s ease-in-out infinite;
+}
+
+.dot-1 {
+    width: 60px;
+    height: 60px;
+    background: #ff6b6b;
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.3s;
+}
+
+.dot-2 {
+    width: 50px;
+    height: 50px;
+    background: #ff9500;
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 0.6s;
+}
+
+.dot-3 {
+    width: 40px;
+    height: 40px;
+    background: #4ecdc4;
+    top: 70%;
+    left: 30%;
+    animation-delay: 0.9s;
+}
+
+.dot-4 {
+    width: 55px;
+    height: 55px;
+    background: #ffcc00;
+    top: 10%;
+    left: 50%;
+    animation-delay: 1.2s;
+}
+
+.dot-5 {
+    width: 65px;
+    height: 65px;
+    background: #ff6b8b;
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px) rotate(5deg);
+    }
+}
+
+@keyframes float-small {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) translateX(15px) scale(1.1) rotate(10deg);
+    }
+}
+
+/* Обертка для центрирования */
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Контейнер регистрации */
+.register-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(255, 204, 0, 0.2);
+    width: 380px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 204, 0, 0.3);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 204, 0, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 204, 0, 0.1) 0%, transparent 20%);
+}
+
+.register-container h1 {
+    margin: 0 0 15px;
+    color: #ffcc00;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255, 204, 0, 0.3);
+}
+
+.register-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e6a800;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Поля ввода */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ffe680;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: rgba(255, 249, 230, 0.5);
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
+    background: white;
+}
+
+.input-group input::placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+.contact-hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Чекбокс условий */
+.terms-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.terms-group input {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.terms-group a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms-group a:hover {
+    text-decoration: underline;
+    color: #e6a800;
+}
+
+/* Контейнер для кнопки - центрирование */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* Кнопка регистрации */
+.register-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ffcc00 0%, #ffdb4d 100%);
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+    background: linear-gradient(135deg, #e6a800 0%, #e6a800 100%);
+}
+
+.register-btn:active {
+    transform: translateY(1px);
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* Ссылка на вход */
+.login-link {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #888;
+    text-align: center;
+}
+
+.login-link a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.login-link a:hover {
+    color: #ffdb4d;
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px rgba(255, 204, 0, 0.2);
+}
+
+/* Декоративные элементы */
+.register-container::before {
+    content: '🎂';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 40px;
+    transform: rotate(-15deg);
+    opacity: 0.8;
+    color: #ffcc00;
+}
+
+.register-container::after {
+    content: '🍰';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 40px;
+    transform: rotate(15deg);
+    opacity: 0.8;
+    color: #ffcc00;
+}
+
+/* Конфетки */
+.candy {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.7;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.candy-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0.5s;
+}
+
+.candy-2 {
+    bottom: 15%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.candy-3 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 1.5s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .register-wrapper {
+        padding: 15px;
+    }
+    
+    .register-container {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    
+    .input-group input {
+        padding: 10px 12px;
+    }
+}
+
+/* Стилизация скроллбара для всей страницы */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 249, 230, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ffcc00 0%, #ffdb4d 100%);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 249, 230, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #ffdb4d 0%, #ffcc00 100%);
+}

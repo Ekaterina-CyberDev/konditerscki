@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сам Кондитер - Регистрация</title>
+    <link rel="stylesheet" href="registrasia.css">
+    <script src="registrasia.js" defer></script>
+</head>
+<body>
+    <div class="background">
+        <!-- Яркие желтые элементы -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        
+        <!-- Кондитерские акценты -->
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+        <div class="dot dot-4"></div>
+        <div class="dot dot-5"></div>
+        
+        <!-- Декоративные конфетки -->
+        <div class="candy candy-1">🍭</div>
+        <div class="candy candy-2">🍬</div>
+        <div class="candy candy-3">🧁</div>
+    </div>
+
+    <div class="register-wrapper">
+        <div class="register-container">
+            <h1>Создание аккаунта</h1>
+            <p>какого хера у тебя нет аккаунта? 😉</p>
+            
+            <div class="input-group">
+                <label for="fullname">Ваше имя</label>
+                <input type="text" id="fullname" placeholder="Введите ваше имя">
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="contact">Email или телефон</label>
+                <input type="text" id="contact" placeholder="Введите email или номер телефона">
+                <div class="contact-hint">Пример: qwerty@mail.ru или +7 (XXX) XXX-XX-XX</div>
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" placeholder="Создайте пароль">
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="input-group">
+                <label for="confirm-password">Повторите пароль</label>
+                <input type="password" id="confirm-password" placeholder="Повторите пароль">
+                <div class="error-message"></div>
+            </div>
+            
+            <div class="terms-group">
+                <input type="checkbox" id="terms">
+                <label for="terms">Я согласен с <a href="#">Условиями предоставления услуг</a> и <a href="#">Политикой конфиденциальности</a></label>
+            </div>
+            
+            <div class="button-container">
+                <button class="register-btn">Создать аккаунт</button>
+            </div>
+            
+            <div class="login-link">
+                Уже есть аккаунт? <a href="../vhod/vhod.html">Войти</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
