@@ -20,18 +20,58 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Рецепты</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#onas">О нас</a></li>
+                        <li><a href="#" id="contacts-link">Контакты</a></li>
+                        <li><a href="#korzina">Корзина</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <a href="#" class="btn btn-primary">Заказать</a>
+                    <a href="tel:+79786828011" class="btn btn-primary">Заказать</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Модальное окно контактов -->
+    <div id="contacts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact-modal-title">Наши контакты</div>
+            
+            <div class="contact-modal-item">
+                <div class="contact-label">Телефон:</div>
+                <div class="contact-value">+7 (978) 682-80-11</div>
+            </div>
+            
+            <div class="contact-modal-item">
+                <div class="contact-label">Email:</div>
+                <div class="contact-value">info@samkonditer.ru</div>
+            </div>
+            
+            <div class="contact-modal-item">
+                <div class="contact-label">Адрес:</div>
+                <div class="contact-value">г. Алушта, ул. Ялтинская 17а (2й этаж)</div>
+            </div>
+            
+            <div class="contact-modal-item">
+                <div class="contact-label">График работы:</div>
+                <div class="contact-value">Пн-Пт: 10:00-19:00</div>
+                <div class="contact-value">Сб-Вс: 10:30-18:00</div>
+            </div>
+            
+            <div class="contact-modal-item">
+                <div class="contact-label">Социальные сети:</div>
+                <div class="social-icons">
+                    <a href="https://web.telegram.org/k/#1740660909" target="_blank" class="social-icon" title="Telegram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
+                    </a>
+                    <a href="https://vk.com/sam_konditeralushta" target="_blank" class="social-icon" title="ВКонтакте">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -39,200 +79,273 @@
             <h1>Кондитерские изделия ручной работы</h1>
             <p>С нами Вам захочется творить! Мы предлагаем лучшие ингредиенты и инструменты для кондитеров</p>
             <div class="hero-cta">
-                <a href="#" class="btn btn-primary">Каталог товаров</a>
-                <a href="#" class="btn btn-secondary">О нас</a>
+                <a href="#categories" class="btn btn-primary">Каталог товаров</a>
+                <a href="#onas" class="btn btn-secondary">О нас</a>
             </div>
         </div>
     </section>
 
-        <!-- Categories Section -->
-    <section class="categories">
+    <!-- Navigation Tabs -->
+    <section class="nav-tabs" id="categories">
         <div class="container">
-            <div class="section-title-center">
-                <h2>Магазин для кондитеров</h2>
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="all">Весь ассортимент</button>
+                <button class="tab-btn" data-tab="hits">Хиты продаж</button>
+                <button class="tab-btn" data-tab="new">Новинки</button>
+                <button class="tab-btn" data-tab="sale">Акции</button>
+                <button class="tab-btn" data-tab="wholesale">Мелкий опт</button>
             </div>
-            
-            <!-- Сетка категорий -->
-            <div class="categories-grid">
-                <!-- Первый ряд (5 элементов по центру) -->
-                <div class="category-row first-row">
-                    <div class="category-item">
-                        <span class="category-name">Наш ассортимент</span>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Весь ассортимент -->
+            <div class="products-grid active" id="all">
+                <h2 class="section-title">Магазин для кондитеров</h2>
+                <div class="categories-grid">
+                    <!-- Основные категории -->
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="для Шоколада.png" alt="Ингредиенты">
+                        </div>
+                        <h3>Ингредиенты</h3>
+                        <ul>
+                            <li>Шоколад и какао</li>
+                            <li>Сахар и подсластители</li>
+                            <li>Мука и смеси</li>
+                            <li>Желатин и агар</li>
+                            <li>Ароматизаторы</li>
+                        </ul>
                     </div>
-                    <div class="category-item">
-                        <span class="category-name">Хит</span>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="для Шоколада.png" alt="Инструменты">
+                        </div>
+                        <h3>Инструменты</h3>
+                        <ul>
+                            <li>Кондитерские мешки</li>
+                            <li>Насадки и коврики</li>
+                            <li>Скалки и ножи</li>
+                            <li>Венчики и миски</li>
+                            <li>Измерительные приборы</li>
+                        </ul>
                     </div>
-                    <div class="category-item">
-                        <span class="category-name">Новинки кондитера</span>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="для Шоколада.png" alt="Формы">
+                        </div>
+                        <h3>Формы для выпечки</h3>
+                        <ul>
+                            <li>Силиконовые формы</li>
+                            <li>Металлические формы</li>
+                            <li>Формы для тортов</li>
+                            <li>Формы для печенья</li>
+                            <li>Формы для шоколада</li>
+                        </ul>
                     </div>
-                    <div class="category-item">
-                        <span class="category-name">Акции</span>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="для Шоколада.png" alt="Упаковка">
+                        </div>
+                        <h3>Упаковка</h3>
+                        <ul>
+                            <li>Коробки для тортов</li>
+                            <li>Пакеты и ленты</li>
+                            <li>Подарочная упаковка</li>
+                            <li>Бумага для выпечки</li>
+                            <li>Фольга и плёнка</li>
+                        </ul>
                     </div>
-                    <div class="category-item">
-                        <span class="category-name">Мелкий опт</span>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="для Шоколада.png" alt="Украшения">
+                        </div>
+                        <h3>Украшения</h3>
+                        <ul>
+                            <li>Пищевые красители</li>
+                            <li>Посыпки и блёстки</li>
+                            <li>Цветы из мастики</li>
+                            <li>Топпинги и глазури</li>
+                            <li>Съедобные картинки</li>
+                        </ul>
                     </div>
-                    <div class="category-item">
-                        <span class="category-name">Распродажа</span>
+
+                    <div class="category-card">
+                        <div class="category-image">
+                            <img src="для Шоколада.png" alt="Специализированные">
+                        </div>
+                        <h3>Специализированные</h3>
+                        <ul>
+                            <li>Для муссовых тортов</li>
+                            <li>Для зефира и маршмеллоу</li>
+                            <li>Для капкейков</li>
+                            <li>Для пряников</li>
+                            <li>Для мороженого</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <!-- Второй ряд (6 элементов) -->
-                <div class="category-row">
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="коробки и упаковка.png" alt="Коробки и упаковка" class="category-image">
+            </div>
+
+            <!-- Хиты продаж -->
+            <div class="products-grid" id="hits">
+                <h2 class="section-title">Хиты продаж</h2>
+                <div class="products-cards">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="силиконовые формы.jpg" alt="Шоколад белый">
                         </div>
-                        <span class="category-name">Коробки и упаковка для тортов и десертов</span>
+                        <h3>Шоколад белый 1кг</h3>
+                        <p class="product-desc">Качественный бельгийский шоколад</p>
+                        <p class="price">850 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="шоколад и какао продукты.png" alt="Шоколад и какао" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="силиконовые формы.jpg" alt="Насадки">
                         </div>
-                        <span class="category-name">Шоколад и какао продукты</span>
+                        <h3>Набор насадок 25шт</h3>
+                        <p class="product-desc">Металлические насадки для крема</p>
+                        <p class="price">1 200 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="пищевые ингридиенты.png" alt="Пищевые ингредиенты" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="силиконовые формы.jpg" alt="Красители">
                         </div>
-                        <span class="category-name">Пищевые ингредиенты</span>
+                        <h3>Гелевые красители 6шт</h3>
+                        <p class="product-desc">Набор пищевых гелевых красителей</p>
+                        <p class="price">450 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="формы для выпечки и коврики.png" alt="Формы для выпечки" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="силиконовые формы.jpg" alt="Кондитерские мешки">
                         </div>
-                        <span class="category-name">Формы для выпечки и коврики</span>
+                        <h3>Мешки кондитерские 50шт</h3>
+                        <p class="product-desc">Одноразовые прочные мешки</p>
+                        <p class="price">280 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="красители пищевые.png" alt="Красители пищевые" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="силиконовые формы.jpg" alt="Силиконовые формы">
                         </div>
-                        <span class="category-name">Красители пищевые</span>
+                        <h3>Силиконовые формы набор</h3>
+                        <p class="product-desc">Различные формы для выпечки</p>
+                        <p class="price">890 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="украшение для тортов и пирожных.png" alt="Украшения для тортов" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="силиконовые формы.jpg" alt="Коробки для тортов">
                         </div>
-                        <span class="category-name">Украшения для тортов и пирожных</span>
-                    </div>
-                </div>
-                
-                <!-- Третий ряд (6 элементов) -->
-                <div class="category-row">
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="инстументы для кондитера.png" alt="Инструменты" class="category-image">
-                        </div>
-                        <span class="category-name">Инструменты для кондитера</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="кондитерские мешки и насадки.png" alt="Кондитерские мешки" class="category-image">
-                        </div>
-                        <span class="category-name">Кондитерские мешки и насадки</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="капсулы и формы бумажные.png" alt="Капсулы и формы" class="category-image">
-                        </div>
-                        <span class="category-name">Капсулы и формы бумажные</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="силиконовые формы.jpg" alt="Силиконовые формы" class="category-image">
-                        </div>
-                        <span class="category-name">Силиконовые формы</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="пищевая печать.png" alt="Пищевая печать" class="category-image">
-                        </div>
-                        <span class="category-name">Пищевая печать</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Муссовых тортов и пирожных.png" alt="Муссовые торты" class="category-image">
-                        </div>
-                        <span class="category-name">Для Муссовых тортов и пирожных</span>
+                        <h3>Коробки для тортов 5шт</h3>
+                        <p class="product-desc">Размеры 20-25-30 см</p>
+                        <p class="price">620 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
                 </div>
-                
-                <!-- Четвертый ряд (6 элементов) -->
-                <div class="category-row">
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Зефирных цветов.png" alt="Зефирные цветы" class="category-image">
+            </div>
+
+            <!-- Новинки -->
+            <div class="products-grid" id="new">
+                <h2 class="section-title">Новинки</h2>
+                <div class="products-cards">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="пищевые ингридиенты.png" alt="Дубайский шоколад">
                         </div>
-                        <span class="category-name">Для Зефирных цветов</span>
+                        <h3>Дубайский шоколад</h3>
+                        <p class="product-desc">Новый вид шоколада с добавками</p>
+                        <p class="price">950 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Шоколада.png" alt="Шоколад" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="пищевые ингридиенты.png" alt="Бенто формы">
                         </div>
-                        <span class="category-name">Для Шоколада</span>
+                        <h3>Формы для бенто-тортов</h3>
+                        <p class="product-desc">Маленькие формы для мини-тортов</p>
+                        <p class="price">340 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Дубайского шоколада.jpg" alt="Дубайский шоколад" class="category-image">
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="пищевые ингридиенты.png" alt="Моти набор">
                         </div>
-                        <span class="category-name">Для Дубайского шоколада</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Капкейков и маффинов.png" alt="Капкейки" class="category-image">
-                        </div>
-                        <span class="category-name">Для Капкейков и маффинов</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Печенья и пряников.png" alt="Печенье" class="category-image">
-                        </div>
-                        <span class="category-name">Для Печенья и пряников</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для конфет.png" alt="Конфеты" class="category-image">
-                        </div>
-                        <span class="category-name">Для конфет</span>
+                        <h3>Набор для моти</h3>
+                        <p class="product-desc">Все для японских десертов</p>
+                        <p class="price">780 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
                 </div>
-                
-                <!-- Пятый ряд (6 элементов) -->
-                <div class="category-row">
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для леденцов, кейк-попсов и т.п..png" alt="Леденцы" class="category-image">
+            </div>
+
+            <!-- Акции -->
+            <div class="products-grid" id="sale">
+                <h2 class="section-title">Акции</h2>
+                <div class="products-cards">
+                    <div class="product-card sale">
+                        <div class="sale-badge">-20%</div>
+                        <div class="product-image">
+                            <img src="для Капкейков и маффинов.png" alt="Айсинг набор">
                         </div>
-                        <span class="category-name">Для леденцов, кейк-полсов и т.п.</span>
+                        <h3>Набор для айсинга</h3>
+                        <p class="product-desc">Полный набор для росписи</p>
+                        <p class="price"><span class="old-price">1 500 ₽</span> 1 200 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Айсинга и гибкого кружева.png" alt="Айсинг" class="category-image">
+
+                    <div class="product-card sale">
+                        <div class="sale-badge">-15%</div>
+                        <div class="product-image">
+                            <img src="для Капкейков и маффинов.png" alt="Кейк-попсы">
                         </div>
-                        <span class="category-name">Для Айсинга и гибкого кружева</span>
+                        <h3>Формы для кейк-попсов</h3>
+                        <p class="product-desc">Набор из 20 форм</p>
+                        <p class="price"><span class="old-price">450 ₽</span> 380 ₽</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для изготовления цветов.png" alt="Цветы" class="category-image">
+                </div>
+            </div>
+
+            <!-- Мелкий опт -->
+            <div class="products-grid" id="wholesale">
+                <h2 class="section-title">Мелкий опт</h2>
+                <div class="products-cards">
+                    <div class="product-card wholesale">
+                        <div class="product-image">
+                            <img src="для Капкейков и маффинов.png" alt="Шоколад опт">
                         </div>
-                        <span class="category-name">Для изготовления цветов</span>
+                        <h3>Шоколад молочный 5кг</h3>
+                        <p class="product-desc">Оптовая упаковка</p>
+                        <p class="price">3 800 ₽</p>
+                        <p class="wholesale-price">760 ₽/кг</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для изготовления Мороженого.jpg" alt="Мороженое" class="category-image">
+
+                    <div class="product-card wholesale">
+                        <div class="product-image">
+                            <img src="для Капкейков и маффинов.png" alt="Коробки опт">
                         </div>
-                        <span class="category-name">Для изготовления Мороженого</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для изготовления моти.png" alt="Моги" class="category-image">
-                        </div>
-                        <span class="category-name">Для изготовления моги</span>
-                    </div>
-                    <div class="category-item">
-                        <div class="image-container">
-                            <img src="для Бенто тортов.jpg" alt="Бенто торты" class="category-image">
-                        </div>
-                        <span class="category-name">Для Бенто тортов</span>
+                        <h3>Коробки для тортов 50шт</h3>
+                        <p class="product-desc">Разные размеры</p>
+                        <p class="price">5 000 ₽</p>
+                        <p class="wholesale-price">100 ₽/шт</p>
+                        <button class="btn-buy">В корзину</button>
                     </div>
                 </div>
             </div>
@@ -240,14 +353,16 @@
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="onas">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>О нашей компании</h2>
                     <p>"Сам Кондитер" - это не просто магазин, это сообщество профессионалов и любителей кондитерского искусства. Мы тщательно отбираем каждый товар в нашем ассортименте, чтобы вы могли создавать настоящие шедевры.</p>
                     <p>Наша миссия - вдохновлять и обеспечивать кондитеров всем необходимым для реализации их самых смелых идей и творческих замыслов.</p>
-                    <a href="#" class="btn btn-primary">Узнать больше</a>
+                    <p>Купить кондитерские ингредиенты, инструменты . Молды, шоколад, насадки, сливки и многое другое. Магазин для кондитеров Алушта.</p>
+                    <p>Сахарная печать, съедобные картинки. Кондитерские инструменты в Крыму. Все для выпечки в Алуште. Интернет магазин для кондитеров в Крыму.</p>
+                    <a href="tel:+79786828011" class="btn btn-primary">Позвонить нам</a>
                 </div>
                 <div class="about-image">
                     <i class="fas fa-store"></i>
@@ -270,11 +385,11 @@
                 </div>
                 <div class="footer-column">
                     <h3>Категории</h3>
-                    <a href="#">Инструменты</a>
-                    <a href="#">Ингредиенты</a>
-                    <a href="#">Формы для выпечки</a>
-                    <a href="#">Упаковка</a>
-                    <a href="#">Книги и рецепты</a>
+                    <a href="#all">Весь ассортимент</a>
+                    <a href="#hits">Хиты продаж</a>
+                    <a href="#new">Новинки</a>
+                    <a href="#sale">Акции</a>
+                    <a href="#wholesale">Мелкий опт</a>
                 </div>
                 <div class="footer-column">
                     <h3>Полезное</h3>
@@ -286,10 +401,13 @@
                 </div>
                 <div class="footer-column">
                     <h3>Контакты</h3>
-                    <p>+7 (495) 123-45-67</p>
+                    <p>+7-978-682-80-11</p>
                     <p>info@samkonditer.ru</p>
-                    <p>Москва, ул. Кондитерская, 15</p>
-                    <p>Ежедневно с 9:00 до 21:00</p>
+                    <p>г.Алушта ул .Ялтинская 17а(2й этаж)</p>
+                    <p>График работы:</p>
+                    <p>с 10:00 до 19:00 будние дни</p>
+                    <p>с10:30 до 18:00 суббота, воскресенье</p> 
+                    <p>Доставка по городу при заказе от 2000 руб БЕСПЛАТНО!!</p>
                 </div>
             </div>
             <div class="copyright">

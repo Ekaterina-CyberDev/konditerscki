@@ -1,4 +1,4 @@
-// Simple JavaScript for header scroll effect
+// Header scroll effect
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -10,9 +10,85 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Animation for product cards on scroll
+// Modal functionality
+const modal = document.getElementById("contacts-modal");
+const btn = document.getElementById("contacts-link");
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function(event) {
+    event.preventDefault();
+    modal.style.display = "block";
+    document.body.style.overflow = 'hidden';
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+    document.body.style.overflow = '';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = '';
+    }
+}
+
+// Tab navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const productGrids = document.querySelectorAll('.products-grid');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and grids
+            tabBtns.forEach(b => b.classList.remove('active'));
+            productGrids.forEach(grid => grid.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding grid
+            this.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+            
+            // Smooth scroll to products section
+            document.getElementById('categories').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    // Add to cart functionality
+    const buyButtons = document.querySelectorAll('.btn-buy');
+    buyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.closest('.product-card').querySelector('h3').textContent;
+            const productPrice = this.closest('.product-card').querySelector('.price').textContent;
+            
+            alert(`Товар "${productName}" добавлен в корзину!\nЦена: ${productPrice}`);
+            
+            // Here you can add actual cart functionality
+            // For now, we'll just show an alert
+        });
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+
+// Animation for cards on scroll
 function animateOnScroll() {
-    const cards = document.querySelectorAll('.product-card');
+    const cards = document.querySelectorAll('.category-card, .product-card');
     cards.forEach(card => {
         const cardPosition = card.getBoundingClientRect().top;
         const screenPosition = window.innerHeight / 1.3;
@@ -23,9 +99,9 @@ function animateOnScroll() {
     });
 }
 
-// Initialize card opacity for animation
+// Initialize animations
 document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.product-card');
+    const cards = document.querySelectorAll('.category-card, .product-card');
     cards.forEach(card => {
         card.style.opacity = 0;
         card.style.transform = 'translateY(50px)';
@@ -33,61 +109,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     window.addEventListener('scroll', animateOnScroll);
-    // Trigger once on load
     animateOnScroll();
-});
-
-// Horizontal scroll functionality for categories
-document.addEventListener('DOMContentLoaded', function() {
-    const gridContainer = document.querySelector('.categories-grid-container');
-    const categoryRows = document.querySelectorAll('.category-row');
-    
-    if (gridContainer) {
-        // Add scroll indicators
-        const scrollIndicators = document.createElement('div');
-        scrollIndicators.className = 'scroll-indicators';
-        scrollIndicators.innerHTML = `
-            <div class="scroll-indicator left">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="scroll-indicator right">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        `;
-        gridContainer.parentNode.appendChild(scrollIndicators);
-        
-        const leftIndicator = document.querySelector('.scroll-indicator.left');
-        const rightIndicator = document.querySelector('.scroll-indicator.right');
-        
-        // Update indicators on scroll
-        gridContainer.addEventListener('scroll', function() {
-            const scrollLeft = gridContainer.scrollLeft;
-            const scrollWidth = gridContainer.scrollWidth;
-            const clientWidth = gridContainer.clientWidth;
-            
-            leftIndicator.style.opacity = scrollLeft > 0 ? '1' : '0.3';
-            rightIndicator.style.opacity = scrollLeft < scrollWidth - clientWidth - 10 ? '1' : '0.3';
-        });
-        
-        // Scroll buttons functionality
-        leftIndicator.addEventListener('click', function() {
-            gridContainer.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-        
-        rightIndicator.addEventListener('click', function() {
-            gridContainer.scrollBy({ left: 300, behavior: 'smooth' });
-        });
-        
-        // Hide indicators on mobile
-        function checkMobile() {
-            if (window.innerWidth <= 768) {
-                scrollIndicators.style.display = 'none';
-            } else {
-                scrollIndicators.style.display = 'flex';
-            }
-        }
-        
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-    }
 });
