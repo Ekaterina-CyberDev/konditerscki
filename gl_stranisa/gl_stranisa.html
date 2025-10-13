@@ -22,15 +22,50 @@
                     <ul>
                         <li><a href="#onas">О нас</a></li>
                         <li><a href="#" id="contacts-link">Контакты</a></li>
-                        <li><a href="#korzina">Корзина</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
+                    <div class="cart-favorites">
+                        <a href="#" class="favorites-icon" id="favorites-link">
+                            <i class="fas fa-heart"></i>
+                            <span class="favorites-count">0</span>
+                        </a>
+                        <a href="#" class="cart-icon" id="cart-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
                     <a href="tel:+79786828011" class="btn btn-primary">Заказать</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Модальное окно избранного -->
+    <div id="favorites-modal" class="modal favorites-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact-modal-title">Избранное</div>
+            
+            <div class="favorites-list" id="favorites-list">
+                <!-- Товары будут добавляться динамически -->
+                <div class="empty-favorites">
+                    <i class="fas fa-heart"></i>
+                    <p>В избранном пока пусто</p>
+                    <p>Добавляйте товары, нажимая на сердечко</p>
+                </div>
+            </div>
+            
+            <div class="favorites-actions">
+                <button class="btn btn-clear-favorites" id="clear-favorites">
+                    Очистить избранное
+                </button>
+                <button class="btn btn-primary" id="continue-shopping">
+                    Продолжить покупки
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Модальное окно контактов -->
     <div id="contacts-modal" class="modal">
