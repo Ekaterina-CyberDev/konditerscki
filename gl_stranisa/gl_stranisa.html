@@ -22,6 +22,7 @@
                     <ul>
                         <li><a href="#onas">О нас</a></li>
                         <li><a href="#" id="contacts-link">Контакты</a></li>
+                        <li><a href="../vhod/vhod.html">Войти</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
@@ -67,6 +68,39 @@
         </div>
     </div>
 
+    <!-- Модальное окно корзины -->
+    <div id="cart-modal" class="modal cart-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact-modal-title">Корзина</div>
+            
+            <div class="cart-list" id="cart-list">
+                <!-- Товары будут добавляться динамически -->
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Корзина пуста</p>
+                    <p>Добавляйте товары, нажимая кнопку "В корзину"</p>
+                </div>
+            </div>
+            
+            <div class="cart-total">
+                <div class="total-price">Итого: <span id="total-amount">0 ₽</span></div>
+            </div>
+            
+            <div class="cart-actions">
+                <button class="btn btn-clear-cart" id="clear-cart">
+                    Очистить корзину
+                </button>
+                <button class="btn btn-primary" id="checkout">
+                    Оформить заказ
+                </button>
+                <button class="btn btn-secondary" id="continue-shopping-cart">
+                    Продолжить покупки
+                </button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Модальное окно контактов -->
     <div id="contacts-modal" class="modal">
         <div class="modal-content">

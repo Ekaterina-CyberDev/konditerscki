@@ -10,11 +10,17 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Глобальные переменные
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
 // Modal functionality
 const modal = document.getElementById("contacts-modal");
 const favoritesModal = document.getElementById("favorites-modal");
+const cartModal = document.getElementById("cart-modal");
 const btn = document.getElementById("contacts-link");
 const favoritesBtn = document.getElementById("favorites-link");
+const cartBtn = document.getElementById("cart-link");
 const spans = document.getElementsByClassName("close");
 
 btn.onclick = function(event) {
@@ -30,19 +36,28 @@ favoritesBtn.onclick = function(event) {
     updateFavoritesModal();
 }
 
+cartBtn.onclick = function(event) {
+    event.preventDefault();
+    cartModal.style.display = "block";
+    document.body.style.overflow = 'hidden';
+    updateCartModal();
+}
+
 // Закрытие модальных окон
 Array.from(spans).forEach(span => {
     span.onclick = function() {
         modal.style.display = "none";
         favoritesModal.style.display = "none";
+        cartModal.style.display = "none";
         document.body.style.overflow = '';
     }
 });
 
 window.onclick = function(event) {
-    if (event.target == modal || event.target == favoritesModal) {
+    if (event.target == modal || event.target == favoritesModal || event.target == cartModal) {
         modal.style.display = "none";
         favoritesModal.style.display = "none";
+        cartModal.style.display = "none";
         document.body.style.overflow = '';
     }
 }
@@ -91,9 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Функционал избранного
-let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
 function initFavorites() {
     updateFavoritesCount();
     addFavoriteButtons();
@@ -188,7 +200,7 @@ function updateFavoritesModal() {
                     <div class="favorite-item-name">${item.name}</div>
                     <div class="favorite-item-price">${item.price}</div>
                 </div>
-                <button class="remove-favorite" onclick="removeFromFavorites('${item.name}')">
+                <button class="remove-favorite" onclick="removeFromFavorites('${item.name.replace(/'/g, "\\'")}')">
                     Удалить
                 </button>
             </div>
@@ -216,22 +228,110 @@ function removeFromFavorites(productName) {
 
 // Функционал корзины
 function addToCart(productName, productPrice, productImage) {
-    const product = { 
-        name: productName, 
-        price: productPrice, 
-        image: productImage,
-        quantity: 1
-    };
+    const existingProduct = cart.find(item => item.name === productName);
     
-    cart.push(product);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        const product = { 
+            name: productName, 
+            price: productPrice, 
+            image: productImage,
+            quantity: 1
+        };
+        cart.push(product);
+    }
+    
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     showNotification('Товар добавлен в корзину!', 'success');
+    
+    // Обновляем модальное окно если оно открыто
+    if (cartModal.style.display === 'block') {
+        updateCartModal();
+    }
 }
 
 function updateCartCount() {
     const countElement = document.querySelector('.cart-count');
-    countElement.textContent = cart.length;
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    countElement.textContent = totalItems;
+}
+
+function updateCartModal() {
+    const cartList = document.getElementById('cart-list');
+    const totalAmount = document.getElementById('total-amount');
+    
+    if (cart.length === 0) {
+        cartList.innerHTML = `
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Корзина пуста</p>
+                <p>Добавляйте товары, нажимая кнопку "В корзину"</p>
+            </div>
+        `;
+        totalAmount.textContent = '0 ₽';
+    } else {
+        let total = 0;
+        cartList.innerHTML = cart.map(item => {
+            const price = parseInt(item.price.replace(/\s/g, '').replace('₽', ''));
+            const itemTotal = price * item.quantity;
+            total += itemTotal;
+            
+            return `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn" onclick="decreaseQuantity('${item.name.replace(/'/g, "\\'")}')">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="increaseQuantity('${item.name.replace(/'/g, "\\'")}')">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-total">${itemTotal} ₽</div>
+                    <button class="remove-cart" onclick="removeFromCart('${item.name.replace(/'/g, "\\'")}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+        }).join('');
+        
+        totalAmount.textContent = `${total} ₽`;
+    }
+}
+
+function increaseQuantity(productName) {
+    const product = cart.find(item => item.name === productName);
+    if (product) {
+        product.quantity += 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        updateCartModal();
+    }
+}
+
+function decreaseQuantity(productName) {
+    const productIndex = cart.findIndex(item => item.name === productName);
+    if (productIndex !== -1) {
+        if (cart[productIndex].quantity > 1) {
+            cart[productIndex].quantity -= 1;
+        } else {
+            cart.splice(productIndex, 1);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        updateCartModal();
+    }
+}
+
+function removeFromCart(productName) {
+    cart = cart.filter(item => item.name !== productName);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    updateCartModal();
+    showNotification('Товар удален из корзины', 'info');
 }
 
 // Уведомления
@@ -290,9 +390,61 @@ document.getElementById('clear-favorites')?.addEventListener('click', function()
     }
 });
 
+// Очистка корзины
+document.getElementById('clear-cart')?.addEventListener('click', function() {
+    if (cart.length > 0) {
+        if (confirm('Вы уверены, что хотите очистить корзину?')) {
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartModal();
+            showNotification('Корзина очищена', 'info');
+        }
+    }
+});
+
+// Оформление заказа
+document.getElementById('checkout')?.addEventListener('click', function() {
+    if (cart.length > 0) {
+        const total = cart.reduce((sum, item) => {
+            const price = parseInt(item.price.replace(/\s/g, '').replace('₽', ''));
+            return sum + (price * item.quantity);
+        }, 0);
+        
+        const orderDetails = cart.map(item => 
+            `${item.name} - ${item.quantity}шт. - ${parseInt(item.price.replace(/\s/g, '').replace('₽', '')) * item.quantity}₽`
+        ).join('\n');
+        
+        const message = `Заказ из интернет-магазина "Сам Кондитер":\n\n${orderDetails}\n\nИтого: ${total}₽`;
+        const phone = '+79786828011';
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Открываем WhatsApp с сообщением
+        window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+        
+        showNotification('Заказ оформлен! Свяжемся с вами в WhatsApp', 'success');
+        
+        // Очищаем корзину после оформления
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        updateCartModal();
+        
+        // Закрываем модальное окно
+        cartModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
 // Продолжить покупки
 document.getElementById('continue-shopping')?.addEventListener('click', function() {
     favoritesModal.style.display = 'none';
+    document.body.style.overflow = '';
+});
+
+// Продолжить покупки для корзины
+document.getElementById('continue-shopping-cart')?.addEventListener('click', function() {
+    cartModal.style.display = 'none';
     document.body.style.overflow = '';
 });
 
