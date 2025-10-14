@@ -17,6 +17,67 @@ body {
     padding: 0 20px;
 }
 
+/* Header Right Section */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Navigation positioning */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Actions positioning */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-favorites {
+    display: flex;
+    gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-right {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .header-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-right {
+        gap: 15px;
+    }
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        font-size: 14px;
+    }
+}
+
 /* Header Styles */
 header {
     background: rgba(255, 250, 230, 0.95);

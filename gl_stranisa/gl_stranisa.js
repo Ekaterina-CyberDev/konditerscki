@@ -362,7 +362,7 @@ document.getElementById('clear-cart-dropdown')?.addEventListener('click', functi
     }
 });
 
-// Оформление заказа
+// Оформление заказа - ИЗМЕНЕНО: переход в Telegram вместо WhatsApp
 document.getElementById('checkout-dropdown')?.addEventListener('click', function() {
     if (cart.length > 0) {
         const total = cart.reduce((sum, item) => {
@@ -374,14 +374,11 @@ document.getElementById('checkout-dropdown')?.addEventListener('click', function
             `${item.name} - ${item.quantity}шт. - ${(parseInt(item.price.replace(/\s/g, '').replace('₽', '')) || 0) * item.quantity}₽`
         ).join('\n');
         
-        const message = `Заказ из интернет-магазина "Сам Кондитер":\n\n${orderDetails}\n\nИтого: ${total}₽`;
-        const phone = '+79786828011';
-        const encodedMessage = encodeURIComponent(message);
+        const message = `🛒 Здравствуйте! Можно ли заказать у вас следующее: \n\n${orderDetails}\n\n💰 ИТОГО: ${total}₽\n\n📞 Для подтверждения заказа свяжитесь с нами!`;
+        const telegramUsername = 'E404_Offline'; // Замените на актуальный username Telegram
         
-        // Открываем WhatsApp с сообщением
-        window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
-        
-        showNotification('Заказ оформлен! Свяжемся с вами в WhatsApp', 'success');
+        // Открываем Telegram с сообщением
+        window.open(`https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`, '_blank');
         
         // Очищаем корзину после оформления
         cart = [];
