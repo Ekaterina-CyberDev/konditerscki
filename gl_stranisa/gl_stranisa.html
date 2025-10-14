@@ -27,14 +27,56 @@
                 </nav>
                 <div class="header-actions">
                     <div class="cart-favorites">
-                        <a href="#" class="favorites-icon" id="favorites-link">
-                            <i class="fas fa-heart"></i>
-                            <span class="favorites-count">0</span>
-                        </a>
-                        <a href="#" class="cart-icon" id="cart-link">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </a>
+                        <div class="dropdown">
+                            <a href="#" class="favorites-icon" id="favorites-link">
+                                <i class="fas fa-heart"></i>
+                                <span class="favorites-count">0</span>
+                            </a>
+                            <div class="dropdown-content favorites-dropdown">
+                                <div class="dropdown-title">Избранное</div>
+                                <div class="dropdown-list" id="favorites-dropdown-list">
+                                    <div class="empty-dropdown">
+                                        <i class="fas fa-heart"></i>
+                                        <p>В избранном пока пусто</p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-actions">
+                                    <button class="btn btn-clear-favorites" id="clear-favorites-dropdown">
+                                        Очистить
+                                    </button>
+                                    <button class="btn btn-primary" id="view-all-favorites">
+                                        Смотреть все
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <a href="#" class="cart-icon" id="cart-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                            <div class="dropdown-content cart-dropdown">
+                                <div class="dropdown-title">Корзина</div>
+                                <div class="dropdown-list" id="cart-dropdown-list">
+                                    <div class="empty-dropdown">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        <p>Корзина пуста</p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-total">
+                                    Итого: <span id="dropdown-total-amount">0 ₽</span>
+                                </div>
+                                <div class="dropdown-actions">
+                                    <button class="btn btn-clear-cart" id="clear-cart-dropdown">
+                                        Очистить
+                                    </button>
+                                    <button class="btn btn-primary" id="checkout-dropdown">
+                                        Заказать
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <a href="tel:+79786828011" class="btn btn-primary">Заказать</a>
                 </div>
@@ -42,65 +84,6 @@
         </div>
     </header>
 
-    <!-- Модальное окно избранного -->
-    <div id="favorites-modal" class="modal favorites-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="contact-modal-title">Избранное</div>
-            
-            <div class="favorites-list" id="favorites-list">
-                <!-- Товары будут добавляться динамически -->
-                <div class="empty-favorites">
-                    <i class="fas fa-heart"></i>
-                    <p>В избранном пока пусто</p>
-                    <p>Добавляйте товары, нажимая на сердечко</p>
-                </div>
-            </div>
-            
-            <div class="favorites-actions">
-                <button class="btn btn-clear-favorites" id="clear-favorites">
-                    Очистить избранное
-                </button>
-                <button class="btn btn-primary" id="continue-shopping">
-                    Продолжить покупки
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Модальное окно корзины -->
-    <div id="cart-modal" class="modal cart-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="contact-modal-title">Корзина</div>
-            
-            <div class="cart-list" id="cart-list">
-                <!-- Товары будут добавляться динамически -->
-                <div class="empty-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p>Корзина пуста</p>
-                    <p>Добавляйте товары, нажимая кнопку "В корзину"</p>
-                </div>
-            </div>
-            
-            <div class="cart-total">
-                <div class="total-price">Итого: <span id="total-amount">0 ₽</span></div>
-            </div>
-            
-            <div class="cart-actions">
-                <button class="btn btn-clear-cart" id="clear-cart">
-                    Очистить корзину
-                </button>
-                <button class="btn btn-primary" id="checkout">
-                    Оформить заказ
-                </button>
-                <button class="btn btn-secondary" id="continue-shopping-cart">
-                    Продолжить покупки
-                </button>
-            </div>
-        </div>
-    </div>
-    
     <!-- Модальное окно контактов -->
     <div id="contacts-modal" class="modal">
         <div class="modal-content">
@@ -167,7 +150,7 @@
         </div>
     </section>
 
-        <!-- Products Section -->
+    <!-- Products Section -->
     <section class="products-section">
         <div class="container">
             <!-- Весь ассортимент -->
@@ -186,36 +169,6 @@
                             <li>Какао-порошок</li>
                             <li>Шоколадная глазурь</li>
                             <li>Какао-масло</li>
-                        </ul>
-                    </div>
-
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="псмир.jpg" alt="Начинки и джемы">
-                        </div>
-                        <h3>Начинки и джемы</h3>
-                        <ul>
-                            <li>Ф</li>
-                            <li>Кары</li>
-                            <li>Шокты</li>
-                            <li>Дм</li>
-                            <li>Крки</li>
-                            <li>Орты</li>
-                        </ul>
-                    </div>
-
-                    <div class="category-card">
-                        <div class="category-image">
-                            <img src="псмир.jpg" alt="Начинки и джемы">
-                        </div>
-                        <h3>Начинки и джемы</h3>
-                        <ul>
-                            <li>Финки</li>
-                            <li>Каусы</li>
-                            <li>Шые пасты</li>
-                            <li>Дмыум</li>
-                            <li>Крчиз</li>
-                            <li>овасты</li>
                         </ul>
                     </div>
 
