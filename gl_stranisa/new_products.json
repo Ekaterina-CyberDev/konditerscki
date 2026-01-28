@@ -1,0 +1,24 @@
+{
+  "new_products": [
+    {
+      "id": 27,
+      "name": "Формы Silikomart 6шт",
+      "price": 1890,
+      "image_filename": "ку-ку.jpg",
+      "category": "molds",
+      "category_name": "Формы и упаковка",
+      "added_at": "2026-01-25 17:12:20",
+      "expires_at": "2026-02-24 17:12:20"
+    },
+    {
+      "id": 28,
+      "name": "помидор",
+      "price": 120,
+      "image_filename": "ку-ку.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "added_at": "2026-01-26 17:26:12",
+      "expires_at": "2026-02-25 17:26:12"
+    }
+  ]
+}

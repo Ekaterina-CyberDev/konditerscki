@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сам Кондитер - {CATEGORY_NAME}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="gl_stranisa.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="gl_stranisa.html" style="text-decoration: none; color: inherit;">
+                        <div>
+                            <div class="logo-text">САМ КОНДИТЕР</div>
+                            <div class="logo-subtext">Товары для кондитеров</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-right">
+                    <nav>
+                        <ul>
+                            <li><a href="gl_stranisa.html#onas">О нас</a></li>
+                            <li><a href="#" id="contacts-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-actions">
+                        <div class="cart-favorites">
+                            <div class="dropdown">
+                                <a href="#" class="favorites-icon" id="favorites-link">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="favorites-count">0</span>
+                                </a>
+                                <div class="dropdown-content favorites-dropdown">
+                                    <div class="dropdown-title">Избранное</div>
+                                    <div class="dropdown-list" id="favorites-dropdown-list">
+                                        <div class="empty-dropdown">
+                                            <i class="fas fa-heart"></i>
+                                            <p>В избранном пока пусто</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-actions">
+                                        <button class="btn btn-clear-favorites" id="clear-favorites-dropdown">
+                                            Очистить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                                <a href="#" class="cart-icon" id="cart-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-count">0</span>
+                                </a>
+                                <div class="dropdown-content cart-dropdown">
+                                    <div class="dropdown-title">Корзина</div>
+                                    <div class="dropdown-list" id="cart-dropdown-list">
+                                        <div class="empty-dropdown">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <p>Корзина пуста</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-total">
+                                        Итого: <span id="dropdown-total-amount">0 ₽</span>
+                                    </div>
+                                    <div class="dropdown-actions">
+                                        <button class="btn btn-clear-cart" id="clear-cart-dropdown">
+                                            Очистить
+                                        </button>
+                                        <button class="btn btn-primary" id="checkout-dropdown">
+                                            Заказать
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Модальное окно контактов -->
+    <div id="contacts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact-modal-title">Наши контакты</div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Телефон:</div>
+                <div class="contact-value">+7 (978) 682-80-11</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Email:</div>
+                <div class="contact-value">info@samkonditer.ru</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Адрес:</div>
+                <div class="contact-value">г. Алушта, ул. Ялтинская 17а (2й этаж)</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">График работы:</div>
+                <div class="contact-value">Пн-Пт: 10:00-19:00</div>
+                <div class="contact-value">Сб-Вс: 10:30-18:00</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Социальные сети:</div>
+                <div class="social-icons">
+                    <a href="https://web.telegram.org/k/#1740660909" target="_blank" class="social-icon" title="Telegram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
+                    </a>
+                    <a href="https://vk.com/sam_konditeralushta" target="_blank" class="social-icon" title="ВКонтакте">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Content -->
+    <section class="hero" style="padding: 150px 0 0px;">
+        <div class="container">
+            <a href="gl_stranisa.html#all" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Назад к категориям
+            </a>
+            <h1>Начинки и джемы</h1>
+            <p class="category-subtitle">Товары категории "Начинки и джемы"</p>
+        </section>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid active">
+                <div class="products-cards">
+
+                    <!-- PRODUCTS_START -->
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="fruktovaya_nachinka_vishnya_1kg.jpg" alt="Фруктовая начинка "Вишня" 1кг" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Фруктовая начинка "Вишня" 1кг</h3>
+                                <p class="price">450 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="karamelnyy_sous_dolce_500g.jpg" alt="Карамельный соус Dolce 500г" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Карамельный соус Dolce 500г</h3>
+                                <p class="price">380 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="shokoladnaya_pasta_nutella_750g.jpg" alt="Шоколадная паста Nutella 750г" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Шоколадная паста Nutella 750г</h3>
+                                <p class="price">650 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="konfityur_dzhem_ratibor_malina_180_g.jpg" alt="Конфитюр (джем) "Ратибор" Малина, 180 г" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Конфитюр (джем) "Ратибор" Малина, 180 г</h3>
+                                <p class="price">200 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="tvorozhnyy_syr_cremette_professional_hochland_1_kg_kremetta.jpg" alt="Творожный сыр Cremette Professional (Hochland) 1 кг, Креметта" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Творожный сыр Cremette Professional (Hochland) 1 кг, Креметта</h3>
+                                <p class="price">950 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="orehovaya_pasta_funduk_500g.jpg" alt="Ореховая паста "Фундук" 500г" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Ореховая паста "Фундук" 500г</h3>
+                                <p class="price">750 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="konfityur_dzhem_ratibor_chyornaya_smorodina_180_g.jpg" alt="Конфитюр (джем) "Ратибор" Чёрная смородина, 180 г" onerror="this.src='ку-ку.jpg'">
+                            </div>
+                            <div class="product-card-content">
+                                <h3>Конфитюр (джем) "Ратибор" Чёрная смородина, 180 г</h3>
+                                <p class="price">200 ₽</p>
+                                <button class="btn-buy">В корзину</button>
+                            </div>
+                        </div>
+                        
+<!-- PRODUCTS_END -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Сам Кондитер</h3>
+                    <p>Товары для кондитеров высочайшего качества. С нами вам захочется творить!</p>
+                    <div class="social-links">
+                        <a href="https://vk.com/sam_konditeralushta" target="_blank"><i class="fab fa-vk"></i></a>
+                        <a href="https://web.telegram.org/k/#1740660909" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Категории</h3>
+                    <a href="gl_stranisa.html#all">Весь ассортимент</a>
+                    <a href="gl_stranisa.html#hits">Хиты продаж</a>
+                    <a href="gl_stranisa.html#new">Новинки</a>
+                    <a href="gl_stranisa.html#sale">Акции</a>
+                    <a href="gl_stranisa.html#wholesale">Мелкий опт</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>+7-978-682-80-11</p>
+                    <p>info@samkonditer.ru</p>
+                    <p>г.Алушта ул .Ялтинская 17а(2й этаж)</p>
+                    <p>График работы:</p>
+                    <p>с 10:00 до 19:00 будние дни</p>
+                    <p>с10:30 до 18:00 суббота, воскресенье</p> 
+                    <p>Доставка по городу при заказе от 2000 руб БЕСПЛАТНО!!</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Сам Кондитер. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="gl_stranisa.js"></script>
+    <script src="load-products.js"></script>
+</body>
+</html>

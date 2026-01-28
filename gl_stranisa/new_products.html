@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новинки - Сам Кондитер</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .new-products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .new-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .new-product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .new-product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .new-product-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .new-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .new-product-info {
+            padding: 20px;
+        }
+
+        .new-product-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            min-height: 60px;
+        }
+
+        .new-product-price {
+            color: #e74c3c;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .new-product-category {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .new-product-date {
+            color: #95a5a6;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+        }
+
+        .btn-buy {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+
+        .btn-buy:hover {
+            background: #2980b9;
+        }
+
+        .no-products {
+            text-align: center;
+            padding: 50px;
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .badge-new {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .new-products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .page-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="new-products-container">
+        <h1 class="page-title">🆕 Новинки</h1>
+
+        <div class="new-products-grid">
+
+            <div class="new-product-card">
+                <div class="badge-new">НОВИНКА</div>
+                <div class="new-product-image">
+                    <img src="ку-ку.jpg" alt="Формы Silikomart 6шт" onerror="this.src='ку-ку.jpg'">
+                </div>
+                <div class="new-product-info">
+                    <h3 class="new-product-title">Формы Silikomart 6шт</h3>
+                    <p class="new-product-price">1890 ₽</p>
+                    <p class="new-product-category">Категория: Формы и упаковка</p>
+                    <p class="new-product-date">
+                        Добавлено: 25.01.2026<br>
+                        Осталось дней: <strong>29</strong>
+                    </p>
+                    <button class="btn-buy">В корзину</button>
+                </div>
+            </div>
+
+            <div class="new-product-card">
+                <div class="badge-new">НОВИНКА</div>
+                <div class="new-product-image">
+                    <img src="ку-ку.jpg" alt="йййййййыйфыйывы" onerror="this.src='ку-ку.jpg'">
+                </div>
+                <div class="new-product-info">
+                    <h3 class="new-product-title">йййййййыйфыйывы</h3>
+                    <p class="new-product-price">5662 ₽</p>
+                    <p class="new-product-category">Категория: Шоколад и какао</p>
+                    <p class="new-product-date">
+                        Добавлено: 25.01.2026<br>
+                        Осталось дней: <strong>29</strong>
+                    </p>
+                    <button class="btn-buy">В корзину</button>
+                </div>
+            </div>
+
+            <div class="new-product-card">
+                <div class="badge-new">НОВИНКА</div>
+                <div class="new-product-image">
+                    <img src="ку-ку.jpg" alt="фывыфывы" onerror="this.src='ку-ку.jpg'">
+                </div>
+                <div class="new-product-info">
+                    <h3 class="new-product-title">фывыфывы</h3>
+                    <p class="new-product-price">51265 ₽</p>
+                    <p class="new-product-category">Категория: Шоколад и какао</p>
+                    <p class="new-product-date">
+                        Добавлено: 25.01.2026<br>
+                        Осталось дней: <strong>29</strong>
+                    </p>
+                    <button class="btn-buy">В корзину</button>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="back-link">← Вернуться на главную</a>
+    </div>
+</body>
+</html>

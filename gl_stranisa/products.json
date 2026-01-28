@@ -1,0 +1,256 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Шоколад Callebaut 1кг",
+      "price": 1250,
+      "image_filename": "shokolad_callebaut_1kg.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-25 01:41:53"
+    },
+    {
+      "id": 2,
+      "name": "Шоколадные каллеты Callebaut 1кг",
+      "price": 1350,
+      "image_filename": "shokoladnye_kallety_callebaut_1kg.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-25 01:45:27"
+    },
+    {
+      "id": 3,
+      "name": "Какао-порошок De Zaan 500г",
+      "price": 850,
+      "image_filename": "kakao_poroshok_de_zaan_500g.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-25 01:48:02"
+    },
+    {
+      "id": 4,
+      "name": "Шоколад белый Callebaut 1кг",
+      "price": 1150,
+      "image_filename": "shokolad_belyy_callebaut_1kg.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-25 01:51:24"
+    },
+    {
+      "id": 5,
+      "name": "Какао-масло 500г",
+      "price": 1800,
+      "image_filename": "kakao_maslo_500g.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-25 01:52:35"
+    },
+    {
+      "id": 6,
+      "name": "Шоколадная глазурь 1кг",
+      "price": 950,
+      "image_filename": "shokoladnaya_glazur_1kg.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-25 01:53:23"
+    },
+    {
+      "id": 7,
+      "name": "Фруктовая начинка \"Вишня\" 1кг",
+      "price": 450,
+      "image_filename": "fruktovaya_nachinka_vishnya_1kg.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:07:22"
+    },
+    {
+      "id": 8,
+      "name": "Карамельный соус Dolce 500г",
+      "price": 380,
+      "image_filename": "karamelnyy_sous_dolce_500g.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:15:55"
+    },
+    {
+      "id": 9,
+      "name": "Шоколадная паста Nutella 750г",
+      "price": 650,
+      "image_filename": "shokoladnaya_pasta_nutella_750g.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:17:23"
+    },
+    {
+      "id": 10,
+      "name": "Конфитюр (джем) \"Ратибор\" Малина, 180 г",
+      "price": 200,
+      "image_filename": "konfityur_dzhem_ratibor_malina_180_g.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:19:40"
+    },
+    {
+      "id": 11,
+      "name": "Творожный сыр Cremette Professional (Hochland) 1 кг, Креметта",
+      "price": 950,
+      "image_filename": "tvorozhnyy_syr_cremette_professional_hochland_1_kg_kremetta.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:20:44"
+    },
+    {
+      "id": 12,
+      "name": "Ореховая паста \"Фундук\" 500г",
+      "price": 750,
+      "image_filename": "orehovaya_pasta_funduk_500g.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:21:30"
+    },
+    {
+      "id": 13,
+      "name": "Конфитюр (джем) \"Ратибор\" Чёрная смородина, 180 г",
+      "price": 200,
+      "image_filename": "konfityur_dzhem_ratibor_chyornaya_smorodina_180_g.jpg",
+      "category": "fillings",
+      "category_name": "Начинки и джемы",
+      "created_at": "2026-01-25 02:31:06"
+    },
+    {
+      "id": 14,
+      "name": "Миндальная мука 1 кг",
+      "price": 1520,
+      "image_filename": "mindalnaya_muka_1_kg.jpg",
+      "category": "flour",
+      "category_name": "Мука и смеси",
+      "created_at": "2026-01-25 02:37:46"
+    },
+    {
+      "id": 15,
+      "name": "Кокосовая мука, 200 г",
+      "price": 214,
+      "image_filename": "kokosovaya_muka_200_g.jpg",
+      "category": "flour",
+      "category_name": "Мука и смеси",
+      "created_at": "2026-01-25 02:39:33"
+    },
+    {
+      "id": 16,
+      "name": "Фундучная мука 500 г",
+      "price": 1350,
+      "image_filename": "funduchnaya_muka_500_g.jpg",
+      "category": "flour",
+      "category_name": "Мука и смеси",
+      "created_at": "2026-01-25 02:40:23"
+    },
+    {
+      "id": 17,
+      "name": "Арахисовая мука 500 г",
+      "price": 306,
+      "image_filename": "arahisovaya_muka_500_g.jpg",
+      "category": "flour",
+      "category_name": "Мука и смеси",
+      "created_at": "2026-01-25 02:45:55"
+    },
+    {
+      "id": 18,
+      "name": "Рисовая мука, 1 кг",
+      "price": 420,
+      "image_filename": "risovaya_muka_1_kg.jpg",
+      "category": "flour",
+      "category_name": "Мука и смеси",
+      "created_at": "2026-01-25 02:49:11"
+    },
+    {
+      "id": 19,
+      "name": "Разрыхлитель теста для бисквита Dr.Bakers, 25 г",
+      "price": 100,
+      "image_filename": "razryhlitel_testa_dlya_biskvita_dr.bakers_25_g.jpg",
+      "category": "flour",
+      "category_name": "Мука и смеси",
+      "created_at": "2026-01-25 02:50:06"
+    },
+    {
+      "id": 20,
+      "name": "Набор гелевых пищевых красителей Тортомания 10 мл, 8 цветов",
+      "price": 1150,
+      "image_filename": "nabor_gelevyh_pischevyh_krasiteley_tortomaniya_10_ml_8_tsvetov.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:02:30"
+    },
+    {
+      "id": 21,
+      "name": "Краситель пищевой Топ продукт, 100 гр",
+      "price": 980,
+      "image_filename": "krasitel_pischevoy_top_produkt_100_gr.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:03:30"
+    },
+    {
+      "id": 22,
+      "name": "Краситель сухой водорастворимый Caramella Черный 20 гр",
+      "price": 235,
+      "image_filename": "krasitel_suhoy_vodorastvorimyy_caramella_chernyy_20_gr.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:07:05"
+    },
+    {
+      "id": 23,
+      "name": "Краситель сухой жирорастворимый Caramella Белый 5 гр",
+      "price": 75,
+      "image_filename": "krasitel_suhoy_zhirorastvorimyy_caramella_belyy_5_gr.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:07:43"
+    },
+    {
+      "id": 24,
+      "name": "Набор сухих жирорастворимых красителей Caramella 5 г, 6 цветов",
+      "price": 450,
+      "image_filename": "nabor_suhih_zhirorastvorimyh_krasiteley_caramella_5_g_6_tsvetov.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:09:08"
+    },
+    {
+      "id": 25,
+      "name": "Набор пищевых маркеров (фломастеров) для украшения \"Цветной\", 4 шт",
+      "price": 250,
+      "image_filename": "nabor_pischevyh_markerov_flomasterov_dlya_ukrasheniya_tsvetnoy_4_sht.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:09:51"
+    },
+    {
+      "id": 26,
+      "name": "Сухие ароматизаторы, 5шт",
+      "price": 480,
+      "image_filename": "suhie_aromatizatory_5sht.jpg",
+      "category": "colors",
+      "category_name": "Красители и ароматизаторы",
+      "created_at": "2026-01-25 15:10:19"
+    },
+    {
+      "id": 27,
+      "name": "Формы Silikomart 6шт",
+      "price": 1890,
+      "image_filename": "ку-ку.jpg",
+      "category": "molds",
+      "category_name": "Формы и упаковка",
+      "created_at": "2026-01-25 17:12:20"
+    },
+    {
+      "id": 28,
+      "name": "помидор",
+      "price": 120,
+      "image_filename": "ку-ку.jpg",
+      "category": "chocolate",
+      "category_name": "Шоколад и какао",
+      "created_at": "2026-01-26 17:26:12"
+    }
+  ]
+}

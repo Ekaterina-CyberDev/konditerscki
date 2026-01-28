@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сам Кондитер - {CATEGORY_NAME}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="gl_stranisa.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="gl_stranisa.html" style="text-decoration: none; color: inherit;">
+                        <div>
+                            <div class="logo-text">САМ КОНДИТЕР</div>
+                            <div class="logo-subtext">Товары для кондитеров</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header-right">
+                    <nav>
+                        <ul>
+                            <li><a href="gl_stranisa.html#onas">О нас</a></li>
+                            <li><a href="#" id="contacts-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-actions">
+                        <div class="cart-favorites">
+                            <div class="dropdown">
+                                <a href="#" class="favorites-icon" id="favorites-link">
+                                    <i class="fas fa-heart"></i>
+                                    <span class="favorites-count">0</span>
+                                </a>
+                                <div class="dropdown-content favorites-dropdown">
+                                    <div class="dropdown-title">Избранное</div>
+                                    <div class="dropdown-list" id="favorites-dropdown-list">
+                                        <div class="empty-dropdown">
+                                            <i class="fas fa-heart"></i>
+                                            <p>В избранном пока пусто</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-actions">
+                                        <button class="btn btn-clear-favorites" id="clear-favorites-dropdown">
+                                            Очистить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown">
+                                <a href="#" class="cart-icon" id="cart-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-count">0</span>
+                                </a>
+                                <div class="dropdown-content cart-dropdown">
+                                    <div class="dropdown-title">Корзина</div>
+                                    <div class="dropdown-list" id="cart-dropdown-list">
+                                        <div class="empty-dropdown">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <p>Корзина пуста</p>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-total">
+                                        Итого: <span id="dropdown-total-amount">0 ₽</span>
+                                    </div>
+                                    <div class="dropdown-actions">
+                                        <button class="btn btn-clear-cart" id="clear-cart-dropdown">
+                                            Очистить
+                                        </button>
+                                        <button class="btn btn-primary" id="checkout-dropdown">
+                                            Заказать
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Модальное окно контактов -->
+    <div id="contacts-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="contact-modal-title">Наши контакты</div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Телефон:</div>
+                <div class="contact-value">+7 (978) 682-80-11</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Email:</div>
+                <div class="contact-value">info@samkonditer.ru</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Адрес:</div>
+                <div class="contact-value">г. Алушта, ул. Ялтинская 17а (2й этаж)</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">График работы:</div>
+                <div class="contact-value">Пн-Пт: 10:00-19:00</div>
+                <div class="contact-value">Сб-Вс: 10:30-18:00</div>
+            </div>
+            <div class="contact-modal-item">
+                <div class="contact-label">Социальные сети:</div>
+                <div class="social-icons">
+                    <a href="https://web.telegram.org/k/#1740660909" target="_blank" class="social-icon" title="Telegram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram">
+                    </a>
+                    <a href="https://vk.com/sam_konditeralushta" target="_blank" class="social-icon" title="ВКонтакте">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Content -->
+    <section class="hero" style="padding: 150px 0 0px;">
+        <div class="container">
+            <a href="gl_stranisa.html#all" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Назад к категориям
+            </a>
+            <h1>Инструменты</h1>
+            <p class="category-subtitle">Товары категории "Инструменты"</p>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid active">
+                <div class="products-cards">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="инструменты.jpg" alt="Насадки Wilton">
+                        </div>
+                        <h3>Насадки Wilton 55шт</h3>
+                        <p class="product-desc">Профессиональные металлические насадки</p>
+                        <p class="price">2 800 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Кондитерские мешки">
+                        </div>
+                        <h3>Мешки кондитерские 100шт</h3>
+                        <p class="product-desc">Одноразовые прочные мешки 50см</p>
+                        <p class="price">320 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Аэрограф кондитерский">
+                        </div>
+                        <h3>Аэрограф мини + красители</h3>
+                        <p class="product-desc">Компактный набор для аэрографии</p>
+                        <p class="price">2 350 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Кондитерские шпатели">
+                        </div>
+                        <h3>Набор шпателей 5шт</h3>
+                        <p class="product-desc">Прямые и угловые шпатели разных размеров</p>
+                        <p class="price">850 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Измерительные приборы">
+                        </div>
+                        <h3>Кухонные весы электронные</h3>
+                        <p class="product-desc">Точность 0.1г, максимум 5кг</p>
+                        <p class="price">1 250 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Термометры">
+                        </div>
+                        <h3>Термометр кондитерский</h3>
+                        <p class="product-desc">Цифровой с щупом, диапазон -50°C...+300°C</p>
+                        <p class="price">890 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Скалки и коврики">
+                        </div>
+                        <h3>Скалка силиконовая с кольцами</h3>
+                        <p class="product-desc">С регулируемой толщиной теста</p>
+                        <p class="price">650 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Набор для айсинга">
+                        </div>
+                        <h3>Набор для айсинга PRO</h3>
+                        <p class="product-desc">Полный набор для росписи печенья</p>
+                        <p class="price">1 800 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Венчики и миски">
+                        </div>
+                        <h3>Набор венчиков 4шт + миска</h3>
+                        <p class="product-desc">Разные размеры венчиков, миска 3л</p>
+                        <p class="price">950 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="ку-ку.jpg" alt="Ножи для тортов">
+                        </div>
+                        <h3>Нож для тортов с нагревателем</h3>
+                        <p class="product-desc">Для ровных и чистых срезов</p>
+                        <p class="price">1 450 ₽</p>
+                        <button class="btn-buy">В корзину</button>
+                    </div>
+
+                    <!-- PRODUCTS_START -->
+<!-- PRODUCTS_END -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Сам Кондитер</h3>
+                    <p>Товары для кондитеров высочайшего качества. С нами вам захочется творить!</p>
+                    <div class="social-links">
+                        <a href="https://vk.com/sam_konditeralushta" target="_blank"><i class="fab fa-vk"></i></a>
+                        <a href="https://web.telegram.org/k/#1740660909" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Категории</h3>
+                    <a href="gl_stranisa.html#all">Весь ассортимент</a>
+                    <a href="gl_stranisa.html#hits">Хиты продаж</a>
+                    <a href="gl_stranisa.html#new">Новинки</a>
+                    <a href="gl_stranisa.html#sale">Акции</a>
+                    <a href="gl_stranisa.html#wholesale">Мелкий опт</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p>+7-978-682-80-11</p>
+                    <p>info@samkonditer.ru</p>
+                    <p>г.Алушта ул .Ялтинская 17а(2й этаж)</p>
+                    <p>График работы:</p>
+                    <p>с 10:00 до 19:00 будние дни</p>
+                    <p>с10:30 до 18:00 суббота, воскресенье</p> 
+                    <p>Доставка по городу при заказе от 2000 руб БЕСПЛАТНО!!</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Сам Кондитер. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="gl_stranisa.js"></script>
+    <script src="load-products.js"></script>
+</body>
+</html>
